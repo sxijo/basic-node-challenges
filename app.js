@@ -1,11 +1,10 @@
 const http = require('http');
 
-
 const server = http.createServer((req, res) => {
   console.log('You requested', req.url);
   res.writeHead(200, {'Content-Type': 'text/plain'})
-  res.end('Hello World');
+  res.end('Hey Code Smiths! Our very first server!!')
 })
 
-server.listen(3000, '127.0.0.1')
-console.log('listening on port 3000...');
+server.listen(3000, '127.0.0.1');
+console.log('Listening on port 3000...');
