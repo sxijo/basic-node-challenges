@@ -1,10 +1,11 @@
-const http = require('http');
+const express = require('express');
+const app = express()
 
-const server = http.createServer((req, res) => {
-  console.log('You requested', req.url);
-  res.writeHead(200, {'Content-Type': 'text/plain'})
-  res.end('Hello Express')
-})
+const handler = (req, res) => {
+  res.send(req.query.first + req.query.last)
+}
 
-server.listen(3000, '127.0.0.1');
-console.log('Listening on port 3000...');
+app.route('/name').get(handler).post(handler)
+
+app.listen(3000);
+console.log('Hello World');
